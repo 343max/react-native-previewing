@@ -1,27 +1,21 @@
 import React, { FC } from 'react'
-import { StyleSheet, View, Text, TextProperties } from 'react-native'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-})
+import { View, Text, TextProperties, SafeAreaView } from 'react-native'
 
 const App: FC = () => {
   const Paragraph: FC<TextProperties> = ({ children, style, ...props }) => (
-    <Text style={[{ paddingTop: 10 }, style]} {...props}>
+    <Text style={[{ paddingTop: 10, fontSize: 18 }, style]} {...props}>
       {children}
     </Text>
   )
 
   return (
-    <View style={styles.container}>
-      <View>
+    <SafeAreaView>
+      <View style={{ padding: 40 }}>
         <Paragraph>This is the app. How do I get to see the preview?</Paragraph>
-        <Paragraph>- Make sure you are using VSCode</Paragraph>
+        <Paragraph>
+          - Open the project in VSCode (not the example dir, the whole dir so
+          you can see the .vscode dir at the very top.
+        </Paragraph>
         <Paragraph>- Command-P to Button.tsx</Paragraph>
         <Paragraph>
           - See ButtonPreview at the very bottom of the file? That's where all
@@ -32,7 +26,7 @@ const App: FC = () => {
           in current file
         </Paragraph>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

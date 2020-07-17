@@ -29,6 +29,9 @@
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods"
   },
+  "bin": {
+    "select-preview.js": "./bin/select-preview.js"
+  },
   "keywords": [
     "react-native",
     "ios",
@@ -116,20 +119,29 @@
           "trailingComma": "es5",
           "useTabs": false
         }
-      ]
+      ],
+      "react-native/no-inline-styles": "off"
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5",
-    "useTabs": false
+    "useTabs": false,
+    "semi": false
   },
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   }
 }
